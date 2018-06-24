@@ -4,7 +4,7 @@
     <img [src]="product.pic">
     <div class="caption">
       <h4 class="pull-right">{{product.price}}元</h4>
-      <h4><a>{{product.trademark}}</a></h4>
+      <h4><a [routerLink]="['/product',product.id]">{{product.trademark}}</a></h4>
     </div>
     <div>
        <!-- 从父组件传递属性到子组件 -->
