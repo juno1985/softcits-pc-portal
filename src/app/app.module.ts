@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { ProductService } from './shared/product.service';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
@@ -24,7 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
