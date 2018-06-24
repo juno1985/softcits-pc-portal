@@ -1,3 +1,7 @@
 <p>
-  stars works!
+    <!-- 使用angular属性绑定中的样式属性绑定  -->
+      <span *ngFor="let star of stars" class="glyphicon glyphicon-star"
+        [class.glyphicon-star-empty]="star"></span>
+        <span>{{rating}}星</span>
 </p>
+    

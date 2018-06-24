@@ -7,7 +7,8 @@
       <h4><a>{{product.trademark}}</a></h4>
     </div>
     <div>
-      <!-- <app-stars></app-stars> -->
+       <!-- 从父组件传递属性到子组件 -->
+       <app-stars [rating]="product.rating"></app-stars>
     </div>
   </div>
 </div>
