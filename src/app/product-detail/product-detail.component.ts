@@ -11,6 +11,10 @@ import {ActivatedRoute} from "@angular/router";
 export class ProductDetailComponent implements OnInit {
   product:Product;
   comments:Comment[];
+    //评论里默认给5颗星
+    newRating:number = 5;
+    //保存评价内容
+    newComment:string="";
   constructor(private routInfo: ActivatedRoute,
               private productService:ProductService) {
   
@@ -22,4 +26,8 @@ export class ProductDetailComponent implements OnInit {
     this.comments=this.productService.getCommentsForProductId(productId);
   }
 
+  addComment(){
+    let comment=new Comment(0,this.product.id,new Date().toISOString(),this.newRating,this.newComment);
+    this.comments.unshift(comment);
+  }
 }

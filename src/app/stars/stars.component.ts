@@ -10,23 +10,26 @@ export class StarsComponent implements OnInit {
   private stars: boolean[];
   @Input()
   private rating: number = 0;
-
+  @Input()
+  private readonly: boolean = true;
   constructor() { }
 
   ngOnInit() {
-      // this.stars = [false, true, true, true, true];
-      this.stars = [];
-      for(let i = 1; i <=5; i++){
-        this.stars.push(i > this.rating);
-  
-      }
+    // this.stars = [false, true, true, true, true];
+    this.stars = [];
+    for (let i = 1; i <= 5; i++) {
+      this.stars.push(i > this.rating);
+
+    }
   }
 
-  clickStar(index:number){
-    //点击第一个星星时,下标是0,得到的星星个数是0+1
-    this.rating=index+1;
+  clickStar(index: number) {
+    if (!this.readonly) {
+      //点击第一个星星时,下标是0,得到的星星个数是0+1
+      this.rating = index + 1;
 
-    //重新计算总星星数
-    this.ngOnInit();
+      //重新计算总星星数
+      this.ngOnInit();
+    }
   }
 }
