@@ -5,8 +5,8 @@
     </div>
   </div>
 </div>
-
-<div *ngFor="let product of products" class="col-md-4 col-sm-4 col-lg-4">
+<!-- 添加管道,实现对title属性的搜索 filter管道selecter,title商品的字段,keyword来自input绑定 -->
+<div *ngFor="let product of (products|filter:'trademark':keyword)" class="col-md-4 col-sm-4 col-lg-4">
   <div class="thumbnail">
     <!-- html的属性绑定 -->
     <img [src]="product.pic">

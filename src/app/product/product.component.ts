@@ -21,7 +21,6 @@ export class ProductComponent implements OnInit {
     .subscribe(
       value=>{this.keyword=value;
       console.log(this.keyword);}
-  
     );
    }
   //product.component.html加载时就会执行下面的方法
