@@ -1,7 +1,8 @@
 <p>
     <!-- 使用angular属性绑定中的样式属性绑定  -->
-      <span *ngFor="let star of stars" class="glyphicon glyphicon-star"
-        [class.glyphicon-star-empty]="star"></span>
+    <!-- 添加循环数组的下标index,并传递给clickStar函数,为五个星星的每一个绑定click事件 -->
+      <span *ngFor="let star of stars;let i =index;" class="glyphicon glyphicon-star"
+        [class.glyphicon-star-empty]="star" (click)="clickStar(i)" ></span>
         <span>{{rating}}星</span>
 </p>
     
