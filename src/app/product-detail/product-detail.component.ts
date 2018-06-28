@@ -30,5 +30,9 @@ export class ProductDetailComponent implements OnInit {
   addComment(){
     let comment=new Comment(0,this.product.id,new Date().toISOString(),this.newRating,this.newComment);
     this.comments.unshift(comment);
+
+    this.newComment=null;
+    this.newRating=5;
+    this.idCommentHidden=true;
   }
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input,EventEmitter,Output } from '@angular/core';
-
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 @Component({
   selector: 'app-stars',
   templateUrl: './stars.component.html',
   styleUrls: ['./stars.component.css']
 })
-export class StarsComponent implements OnInit {
+export class StarsComponent implements OnInit,OnChanges {
 
   private stars: boolean[];
   @Input()
@@ -41,5 +41,14 @@ export class StarsComponent implements OnInit {
       //将评星数发射出去,共父组件得到
       this.ratingChange.emit(this.rating);
     }
+  }
+
+  ngOnChanges(){
+    this.stars = [];
+    for(let i = 1; i <=5; i++){
+      this.stars.push(i > this.rating);
+
+    }
+    console.log("-->"+this.stars);
   }
 }
