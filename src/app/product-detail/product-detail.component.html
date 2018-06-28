@@ -13,7 +13,11 @@
   </div>
   
   <div class="well">
-
+    <div>
+      <button class="btn btn-success" (click)="idCommentHidden=!idCommentHidden">发表或隐藏评论</button>
+    </div>
+  
+    <div [hidden]="idCommentHidden">
       <div>
           <div><app-stars [readonly]="false" [(rating)]="newRating"></app-stars>
           </div>
@@ -25,7 +29,7 @@
             <button class="btn" (click)="addComment()">提交</button>
           </div>
         </div>
-        
+    </div>
     <div class="row" *ngFor="let comment of comments">
       <hr>
       <div class="col-md-12">
