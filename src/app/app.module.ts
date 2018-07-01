@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
 import { Routes,RouterModule } from '@angular/router';
+import { FilterPipe } from './pipe/filter.pipe';
 
 const routeConfig: Routes =[
   {path:'', component:HomeComponent},
@@ -29,7 +30,8 @@ const routeConfig: Routes =[
     StarsComponent,
     NavbarComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
